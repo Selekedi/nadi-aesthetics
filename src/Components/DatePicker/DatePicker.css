@@ -1,0 +1,53 @@
+.date-selector {
+  max-width: 500px;
+}
+
+@media (max-width:768px){
+  .date-selector {
+    width: 80%;
+  }
+}
+
+.week-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 8px;
+}
+
+@media (max-width:768px){
+  .week-strip {
+    width: 100%;
+  }
+}
+
+
+.day-btn {
+  min-width: 60px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.day-btn.selected {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.selected-date {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.back-button {
+  margin-top: 1rem;
+  background: #eee;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}

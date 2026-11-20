@@ -1,0 +1,386 @@
+.chosen-style-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 20px;
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        width: 280px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .chosen-style-container:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .style {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .price {
+        font-size: 14px;
+        color: #6b7280;
+    }
+
+    .close {
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        font-size: 14px;
+        font-weight: 600;
+        color: #6b7280;
+        cursor: pointer;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .add-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(135deg, #111827, #1f2937);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(17, 24, 39, 0.25);
+        transition: all 0.2s ease;
+    }
+
+    .add-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(17, 24, 39, 0.35);
+    }
+
+
+
+    .add-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 14px rgba(17, 24, 39, 0.2);
+    }
+    
+    /* Modal Container - Fixed overlay covering the entire viewport */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Backdrop - Darkens and blurs the background content */
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Content Card */
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Header Section */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8c8c8c;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #1a1a1a;
+}
+
+/* Booking Details Area */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.details span {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  display: block;
+}
+
+/* Dynamic Bold Styling for labels (Optional but looks great) */
+.details span::before {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Warning Banner */
+.warning {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.warning-paragraph {
+  font-size: 0.85rem;
+  color: #d46b08;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Action Controls (Buttons) */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Edit Button (Secondary) */
+.controls button:first-child {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+
+.controls button:first-child:hover {
+  background-color: #f5f5f5;
+  border-color: #bfbfbf;
+}
+
+/* Confirm Button (Primary) */
+.controls button:last-child {
+  background-color: #0070f3;
+  border: 1px solid #0070f3;
+  color: #ffffff;
+}
+
+.controls button:last-child:hover {
+  background-color: #0051cb;
+  border-color: #0051cb;
+}
+
+/* Subtle entrance animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    .plus {
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        font-weight: 700;
+    }
+
+
+    .close:hover {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+    .modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    /* Backdrop */
+    .modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        animation: fadeIn 0.2s ease forwards;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background: white;
+        width: 420px;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        animation: scaleIn 0.2s ease forwards;
+    }
+
+    /* Header */
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+    }
+
+    /* Close Button */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* Grid */
+    .style-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .style-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .style-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        border-color: #d1d5db;
+    }
+
+    /* Image placeholder (future-proof) */
+    .style-image {
+        height: 120px;
+        background: #f3f4f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: #9ca3af;
+    }
+
+    /* Content area */
+    .style-info {
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .style-name {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .style-price {
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+    
+.proceed {
+	min-width: 60px;
+	padding: 8px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	background: #fff;
+	cursor: pointer;
+	text-align: center;
+	background: #007bff;
+	color: white;
+	border-color: #007bff;
+}
